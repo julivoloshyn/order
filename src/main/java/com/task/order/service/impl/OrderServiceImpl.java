@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 public class OrderServiceImpl implements OrderService{
 
     OrderRepository orderRepository;
+    OrderService orderService;
     ModelMapper mapper = new ModelMapper();
 
     @Override
@@ -23,7 +24,12 @@ public class OrderServiceImpl implements OrderService{
 
     @Override
     public OrderDTO findOrderByItem(String orderItem) {
-        return null;
+        OrderDTO orderDTO = orderService.findOrderByItem(orderItem);
+
+        //ToDO
+        return mapper.map(
+                orderRepository.findBy()
+        );
     }
 
     @Override
