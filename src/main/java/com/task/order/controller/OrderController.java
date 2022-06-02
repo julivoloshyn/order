@@ -18,7 +18,7 @@ public class OrderController {
     }
 
     @PostMapping("/save")
-    public void saveOrder(@RequestBody OrderDTO orderDTO) {
-        orderService.saveOrder(orderDTO);
+    public OrderDTO saveOrder(@RequestBody OrderDTO orderDTO) {
+        return orderService.saveOrder(orderDTO);
     }
 }
